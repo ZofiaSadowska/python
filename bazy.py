@@ -13,8 +13,8 @@ def wiersz():
     print("TYTUŁ           AUTOR            DATA")
 
 
-Id1 = ksiazki('Adam', 'Mickiewicz', 'bog wie kiedy', 'Dziady')
-Id2 = ksiazki('Henryk', 'sienkiewicz', 'nwm', 'Potop')
+Id1 = ksiazki('Adam', '     Mickiewicz', '     bog wie kiedy', 'Dziady')
+Id2 = ksiazki('Henryk', '      Sienkiewicz', '  nwm', 'Potop')
 
 
 
@@ -26,6 +26,24 @@ for el in ksiegarnia:
     }
 
 
+zapytanie = input("chcesz dodac nowy rekord? jesli tak wpisz 't', jesli nie, 'n'")
+if (zapytanie == 't'):
+      n =0
+      nowy =[]
+      while n <4:
+        nowy.append(input('podaj wartosc'))
+        n+=1
+elif zapytanie== 'n':
+    print('ok.spierdalaj :-)')
+else:
+    print('jestes glupi czy jestes glupi?')    
 
+
+for el in nowy:
+
+    
+
+
+print (nowy)
         
         
