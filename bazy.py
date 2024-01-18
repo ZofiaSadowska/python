@@ -36,7 +36,8 @@ if (zapytanie == 't'):
 elif zapytanie== 'n':
     print('ok.spierdalaj :-)')
 else:
-    print('jestes glupi czy jestes glupi?')    
+    print('jestes glupi czy jestes glupi?')
+    pass
 
 
 for el in nowy:
