@@ -71,7 +71,7 @@ isNumber = True
 for i in pesel:
     if i not in numbers:
       isNumber = False
-      print('nie wpisales samych cyfr')
+      print('you need to input numbers only')
       sys.exit(0)
     
 
