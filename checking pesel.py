@@ -1,4 +1,4 @@
-Miesiące= {
+Months= {
   '01':31,
   '02': 28,
   '03' : 31,
@@ -64,43 +64,43 @@ Miesiące= {
 }
 pesel = input('pesel: ')
 
-d = len(pesel)
+lenght = len(pesel)
 
-cyfry = '0123456789'
-czyCyfra = True
+numbers = '0123456789'
+isNumber = True
 for i in pesel:
-    if i not in cyfry:
-      czyCyfra = False
+    if i not in numbers:
+      isNumber = False
       print('nie wpisales samych cyfr')
       sys.exit(0)
     
 
-ostatnia = int(pesel[d-1])
+lastNumber = int(pesel[d-1])
 
-suma = int(pesel[0]) + int(pesel[1])*3 + int(pesel[2])*7 + int(pesel[3])*9 + int(pesel[4]) + int(pesel[5])*3 + int(pesel[6])*7 + int(pesel[7])*9 + int(pesel[8]) + int(pesel[9])*3
-n = len(str((suma)))
-s = str(suma)
-suma_k = int(s[n-1])
-suma_k = 10-suma_k
+sum = int(pesel[0]) + int(pesel[1])*3 + int(pesel[2])*7 + int(pesel[3])*9 + int(pesel[4]) + int(pesel[5])*3 + int(pesel[6])*7 + int(pesel[7])*9 + int(pesel[8]) + int(pesel[9])*3
+lenght2 = len(str((sum)))
+sum2 = str(sum)
+checkSum = int(s[n-1])
+checkSum = 10-checkSum
 
-rok = pesel[0] + pesel[1]
-miesiac = pesel[2] + pesel[3]
-if int(rok)%4 == 0:
-  Miesiace['02']= 29
-  Miesiace['22'] = 29
-  Miesiace['42'] = 29
-  Miesiace['62']= 29
-  Miesiace['82'] = 29
-dzien = pesel[4] + pesel[5]
-
-
+year = pesel[0] + pesel[1]
+month = pesel[2] + pesel[3]
+if int(year)%4 == 0:
+  Months['02']= 29
+  Months['22'] = 29
+  Months['42'] = 29
+  Months['62']= 29
+  Months['82'] = 29
+day = pesel[4] + pesel[5]
 
 
-if d==11 and suma_k==ostatnia and 1 <= int(dzien) <= Miesiace[miesiac] and miesiac in Miesiace:
 
-  print("wpisales poprawny pesel")
+
+if lenght==11 and checkSum==lastNumber and 1 <= int(day) <= Months[month] and month in Months:
+
+  print("this number pesel is correct")
 
 else:
 
-  print("wpisales niepoprawny pesel")
+  print("this number pesel is not correct")
 
