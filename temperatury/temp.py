@@ -4,7 +4,7 @@ import pandas as pd
 #zadanie 2
 
 csv = pd.read_csv('temperature.csv', sep=';')
-print(csv.to_string())
+#print(csv.to_string())
 
 #zadanie 3
 
@@ -27,3 +27,36 @@ print(df.loc[df['City'] =='Warsaw'][df['month'] == 1]['AverageTemperatureFahr'].
 #zadanie 10
 print('Najwyższa: ', df.loc[df['Country']=='Poland']['AverageTemperatureFahr'].max())
 print('Najniższa: ', df.loc[df['Country']=='Poland']['AverageTemperatureFahr'].min())
+
+
+df.rename(columns={'AverageTemperatureFahr':'AvgTmpF'},inplace=True)
+df.rename(columns={'AverageTemperatureUncertaintyFahr':'AvgTmpUnF'},inplace=True)
+print(df)
+
+def F2C(tmp):
+    return 5*(tmp-32)/9
+
+df['AvgTmpC'] = df['AvgTmpF'].map(F2C)
+df['AvgTmpUnC'] = df['AvgTmpUnF'].map(F2C)
+
+del df['AvgTmpUnF']
+
+def Latitude(lat):
+    if lat[-1] == 'N':
+        return float(lat[:-1])
+    elif lat[-1] == 'S':
+        return -float(lat[:-1])
+    else:
+        return 0.0
+
+def Longitude(lon):
+    if lon[-1] == 'W':
+        return -float(lon[:-1])
+    elif lon[-1] == 'E':
+        return float(lon[:-1])
+    else:
+        return 0.0
+
+df['Latitude'] = df['Latitude'].map(Latitude)
+df['Longitude'] = df['Longitude'].map(Longitude)
+print(df)
