@@ -1,4 +1,5 @@
 from tkinter import *  
+import math
 top = Tk()  
 top.geometry('300x300')
 top.title('calculator')
@@ -13,6 +14,11 @@ def press(button):
     expression = expression + str(button)
     equation.set(expression)
 
+
+def pierwiastek():
+    global expression
+    expression = math.sqrt(int(expression))
+    equation.set(expression)
 
 
 
@@ -46,9 +52,9 @@ expression_field.grid(columnspan=10, ipadx=70)
 #first row
 cancel = Button(top,text='C', width=5, height=3, foreground='red',command=lambda: clear())
 cancel.grid(row=2, column=0)
-parentheses = Button(top, text='()', width=5, height=3)
+parentheses = Button(top, text='()', width=5, height=3,)
 parentheses.grid(row=2, column=1)
-percent = Button(top, text='%', width=5, height=3)
+percent = Button(top, text='√', width=5, height=3,command=lambda: pierwiastek())
 percent.grid(row=2, column=2)
 division = Button(top,text = '÷',width=5, height=3,command=lambda: press('/'))
 division.grid(row=2, column=3)
